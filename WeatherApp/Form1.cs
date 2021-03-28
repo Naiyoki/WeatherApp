@@ -296,8 +296,8 @@ namespace WeatherApp
 
         private void emailValues()
         {
-            string username = "anagami54@gmail.com";
-            string password = "sonic5678";
+            string username = "NAmari5455@gmail.com";
+            string password = "Debbie123!";
             string smtpcli = "smtp.gmail.com";
             int port = 587;
             string to = Email;
@@ -308,7 +308,7 @@ namespace WeatherApp
           
 
         condition = getForcast1(City, APPID);
-        if (condition == "Clouds")
+        if (condition == "Rain")
         {
             if (Role == "IT")
             {
@@ -340,8 +340,8 @@ namespace WeatherApp
             msg.BodyEncoding = Encoding.UTF8;
             msg.IsBodyHtml = true;
             msg.Priority = MailPriority.Normal;
-           // msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-           // client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
+            msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+            client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
             string userstate = "Sending...";
             client.SendAsync(msg, userstate);
         }
